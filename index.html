@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link type="text/css" rel="stylesheet" href="style.css"/>
+  </head>
+  <body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ordenar una Lista</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Ordenar una Lista</h1>
+        <p>Ordenar una lista de números de menor a mayor.</p>
+        <button onclick="sortNumbers()">Ejecutar</button>
+    </div>
+    <script>
+        /**
+         * Conceptos involucrados: Ordenamiento, algoritmos básicos.
+         * Este código ordena una lista de números proporcionada por el usuario.
+         */
+        function sortNumbers() {
+            // Solicita al usuario una lista de números separados por comas
+            let input = prompt("Introduce una lista de números separados por comas (e.g., 4, 2, 7, 1):");
+            
+            // Verifica si la entrada no está vacía
+            if (!input) {
+                alert("Entrada vacía. Inténtalo de nuevo.");
+                return;
+            }
+            
+            // Convierte la cadena de entrada en un array de números
+            let numbers = input.split(",").map(num => parseFloat(num.trim()));
+            
+            // Verifica si todos los elementos ingresados son números válidos
+            if (numbers.some(isNaN)) {
+                alert("Por favor, asegúrate de introducir solo números.");
+                return;
+            }
+            
+            // Ordena los números en orden ascendente
+            let sorted = numbers.sort((a, b) => a - b);
+            
+            // Muestra la lista ordenada al usuario
+            alert("Lista ordenada: " + sorted.join(", "));
+        }
+    </script>
+</body>
+</html>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
